@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Check Availability</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <h1>Check Room Availability</h1>
+    <p>Find rooms available on a particular date and time.</p>
+
+    <form action="/availability" method="POST">
+        <label for="date">Select date:</label>
+        <input type="date" name="date" id="date" required>
+
+        <br><br>
+
+        <label for="slot">Select Time Slot:</label>
+
+        <select name="slot" id="slot" required>
+            <option value="T1 08:00-09:00">T1 08:00-09:00</option>
+            <option value="T2 09:00-10:00">T2 09:00-10:00</option>
+            <option value="T3 10:00-11:00">T3 10:00-11:00</option>
+            <option value="T4 11:00-12:00">T4 11:00-12:00</option>
+            <option value="T5 12:00-01:00">T5 12:00-01:00</option>
+            <option value="T6 01:00-02:00">T6 01:00-02:00</option>
+            <option value="T7 02:00-03:00">T7 02:00-03:00</option>
+            <option value="T8 03:00-04:00">T8 03:00-04:00</option>
+            <option value="T9 04:00-05:00">T9 04:00-05:00</option>
+            <option value="T10 05:00-06:00">T10 05:00-06:00</option>
+            <option value="T11 06:00-07:00">T11 06:00-07:00</option>
+        </select>
+
+        <br><br>
+
+        <button type="submit">Check Availability</button>
+
+    </form>
+    <br>
+
+    {% if available_rooms is defined %}
+
+        <h2>Available Rooms:</h2>
+        <p>Date: {{selected_date}}</p>
+        <p>Slot: {{selected_slot}}</p>
+
+        {% if available_rooms %}
+
+            <ul>
+                {% for room in available_rooms %}
+                    <li>{{ room }}</li>
+                {% endfor %}
+            </ul>
+
+        {% else %}
+
+            <p>No rooms are available for this date and slot.</p>
+
+        {% endif %}
+    
+    {% endif %}
+
+
+    <a href="/">Back to Home</a>
+</body>
+</html>

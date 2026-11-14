@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book a Room</title>
+    <link rel="stylesheet" href="/style.css"></head>
+<body>
+
+    <h1>Book a Room</h1>
+
+    <form action="/book" method="POST">
+
+        <label for="room">Select Room:</label>
+        <select name="room" id="room" required>
+            <option value="">Choose a room</option>
+            {% for i in range(1, 11) %}
+                {% set room = "APJ-%02d"|format(i) %}
+                <option value="{{ room }}">{{ room }}</option>
+            {% endfor %}
+        </select>
+
+        <br><br>
+
+        <label for="date">Select Date:</label>
+        <input
+            type="date"
+            name="date"
+            id="date"
+            min="{{ min_date }}"
+            max="{{ max_date }}"
+            required
+        >
+
+        <br><br>
+
+        <label for="slot">Select Slot:</label>
+        <select name="slot" id="slot" required>
+            <option value="">Choose a slot</option>
+            <option value="T1 08:00-09:00">T1 08:00-09:00</option>
+            <option value="T2 09:00-10:00">T2 09:00-10:00</option>
+            <option value="T3 10:00-11:00">T3 10:00-11:00</option>
+            <option value="T4 11:00-12:00">T4 11:00-12:00</option>
+            <option value="T5 12:00-01:00">T5 12:00-01:00</option>
+            <option value="T6 01:00-02:00">T6 01:00-02:00</option>
+            <option value="T7 02:00-03:00">T7 02:00-03:00</option>
+            <option value="T8 03:00-04:00">T8 03:00-04:00</option>
+            <option value="T9 04:00-05:00">T9 04:00-05:00</option>
+            <option value="T10 05:00-06:00">T10 05:00-06:00</option>
+            <option value="T11 06:00-07:00">T11 06:00-07:00</option>
+        </select>
+
+        <br><br>
+
+        <label for="purpose">Purpose:</label>
+        <input type="text" name="purpose" id="purpose" placeholder="Enter booking purpose" required>
+
+        <br><br>
+
+        <button type="submit">Book Room</button>
+
+    </form>
+
+    {% with messages = get_flashed_messages() %}
+        {% for message in messages %}
+            <p>{{ message }}</p>
+        {% endfor %}
+    {% endwith %}
+
+    <br>
+    <a href="/">Back to Home</a>
+
+</body>
+</html>

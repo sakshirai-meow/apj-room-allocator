@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View Timetable</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <h1>View Room Timetable</h1>
+    <p>Select a room to view its timetable</p>
+
+    <form action="/timetable" method="POST">
+
+        <label for="room">Select Room:> </label>
+
+        <select name="room" id="room">
+            <option value="APJ-01">APJ-01</option>
+            <option value="APJ-02">APJ-02</option>
+            <option value="APJ-03">APJ-03</option>
+            <option value="APJ-04">APJ-04</option>
+            <option value="APJ-05">APJ-05</option>
+            <option value="APJ-06">APJ-06</option>
+            <option value="APJ-07">APJ-07</option>
+            <option value="APJ-08">APJ-08</option>
+            <option value="APJ-09">APJ-09</option>
+            <option value="APJ-10">APJ-10</option>
+        </select>
+
+        <button type="submit">View Timetable</button>
+    </form>
+
+    {% if timetable_grid %}
+
+        <h2>Timetable for {{ selected_room }}</h2>
+
+        <table border="1" cellpadding="8">
+            <tr>
+                <th>Slot</th>
+
+                {% for day in days %}
+                    <th>{{ day }}</th>
+                {% endfor %}
+            </tr>
+
+            {% for slot in slots %}
+                <tr>
+                    <th>{{ slot }}</th>
+
+                    {% for day in days %}
+                        <td>
+                            {{ timetable_grid[slot][day] }}
+                        </td>
+                    {% endfor %}
+
+                </tr>
+            {% endfor %}
+        </table>
+
+    {% endif %}
+
+    <a href="/">Back to Home</a>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Room Allocator</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<style>
+    button {
+        margin: 10px;
+    }
+</style>
+
+<body>
+
+    <h1>Room Allocator</h1>
+
+    <p>Welcome to the Room Allocator</p>
+
+    {% with messages = get_flashed_messages() %}
+        {% for message in messages %}
+            <p>{{ message }}</p>
+        {% endfor %}
+    {% endwith %}
+
+    <h2>What would you like to do?</h2>
+
+    <a href="/timetable">
+        <button>View Timetable</button>
+    </a> 
+    
+    <a href="/availability">
+        <button>Check Room Availability</button>
+    </a> 
+
+    {% if current_user.is_authenticated %}
+
+    <p>Logged in as {{ current_user.username }}</p>
+
+    <a href="/book"><button>Book a Room</button></a>
+    <a href="/cancel-booking"><button>Cancel a Booking</button></a>
+    <br>
+    <a href="/cancel-class"><button>Cancel a Class</button></a>
+    <a href="/reinstate-class"><button>Reinstate a Class</button></a>
+    <br>
+    <a href="/logout"><button>Logout</button></a>
+
+    {% else %}
+
+    <a href="/login"><button>Login as CR</button></a>
+
+    {% endif %}
+
+
+</body>
+</html>

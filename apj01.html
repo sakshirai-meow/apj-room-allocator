@@ -1,0 +1,142 @@
+<LINK href='css/METAL/app.css' type=text/css rel=stylesheet>
+        <SCRIPT LANGUAGE = 'javascript' src='js/plumjs.js'  type='text/javascript'> </SCRIPT><LINK href='css/METAL/app.css' type=text/css rel=stylesheet>
+		<SCRIPT LANGUAGE = 'javascript' src='js/plumjs.js'  type='text/javascript'> 
+		</SCRIPT><!DOCTYPE html>
+	<!-- saved from url=(0063)file:///C:/Users/adm/Desktop/Toogle%20search/togglesearch.html? -->
+	<html><head><meta http-equiv='Content-Type' content='text/html; charset=windows-1252'>
+    <link href='item-block.css' rel='stylesheet'> 
+    <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+     
+    <script>
+        $(document).ready(function(){
+			$('.ttable_block').hide();
+            var is_btn = false;
+            $('.ttable_btn').hover(function(){
+                is_btn = true;
+                $('.ttable_block').hide();
+                $(this).parent().find('.ttable_block').toggle();
+            });
+            
+            $(body).hover(function(){ 
+                if ( ! is_btn)  
+                    $('.ttable_block').hide();
+                is_btn = false;
+            });
+            
+        });
+		function CheckFaculty(){
+			faculty = document.getElementById('txttutorcode').value;
+			if(faculty==''){
+				alert('Please Pick Faculty and Proceed.');
+				return false;
+			}
+			return true;
+		}
+		function CheckRoom(){
+			room = document.getElementById('txtroomcode').value;
+			if(room==''){
+				alert('Please Pick Room and Proceed.');
+				return false;
+			}
+			return true;
+		}
+		function PushNA(typ){
+			if(typ=='Dept.All'){
+				document.getElementById('txttutor').value='Dept.All';
+				document.getElementById('txttutorcode').value='Dept.All';
+			}
+			if(typ=='All'){
+				document.getElementById('txttutor').value='All';
+				document.getElementById('txttutorcode').value='All';
+			}
+		}
+	</script>
+	<style>
+		 body{font-family:Arial;}
+		 </style>
+	</head>
+
+	<body><table width=99% style='margin:5px'><tr><td style='background-color:#FFAA00;' class='shadow'>This window "Time Table" is available for the period from "08-08-2020 " to "31-12-2026" only</td></tr><table><div class=plum_fieldbig style='padding-top:7px;text-align:center'><form method='Post' name=f1 id=f1 onsubmit='return CheckRoom();'>
+		Room: <input type=hidden name=roomcode id=txtroomcode class='plum_boxs' size=10>
+		<input placeholder='Pick Room' type=text readonly name=room id=txtroom class='plum_boxs' size=10 value='APJ-01'><a href='javascript:openURL("plum_url.php?jw2kjEwwSbvqkH4O9z7eFKYtkeVI+PTvLAhJXnksE8776NXRxa73JahzPiEOQqCWh8Kmg/j/bme+7mqqY0w1i81dED/8XRpzMuC6L5svzF8BCkHLLzMK/bWnr9TuBa4v","top=100 left=100 width=300  height=500 ")'> <img src='images/enlarge.gif' border=0 title='Picker'></a> &nbsp;Sem : <select name='semcmb' id='semcmb' style='' class=plum_combo ><option value='1-3-5-7' selected >ODD</option><option value='2-4-6-8'>EVEN</option></select>
+<input type='hidden' name='enc_semcmb' id='enc_semcmb' value='P0RYCVYHDvjv4ZWnV+lsiPiOE6wbkYUVXnt1gj7ut/9uyy0d8ZkKWDvCKeeG1r0F'>&emsp;<input type='submit' name='submit' value='Go'>&emsp;<a class='plum_button' href='javascript:if (document.getElementById("f1"))document.getElementById("f1").style.display="none";window.print()'>&emsp;Print&emsp;</a></form></div><br><br><br><table width='98%' align=center border=1 style='border-collapse:collapse;' cellspacing=0 cellpadding=3 class='plum_fieldbig'>
+			<tbody><tr align=center class='plum_head'><td colspan=13>Time Table of Room No : APJ-01 for Academics Year : 2026-27 -  Semester</td></tr>
+			<tr align=center><td style='max-width:10px;'></td><td align=center class='plum_fieldbig '><b>T1<br>08:00-09:00</b></td><td align=center class='plum_fieldbig '><b>T2<br>09:00-10:00</b></td><td align=center class='plum_fieldbig '><b>T3<br>10:00-11:00</b></td><td align=center class='plum_fieldbig '><b>T4<br>11:00-12:00</b></td><td align=center class='plum_fieldbig '><b>T5<br>12:00-01:00</b></td><td align=center class='plum_fieldbig '><b>T6<br>01:00-02:00</b></td><td align=center class='plum_fieldbig '><b>T7<br>02:00-03:00</b></td><td align=center class='plum_fieldbig '><b>T8<br>03:00-04:00</b></td><td align=center class='plum_fieldbig '><b>T9<br>04:00-05:00</b></td><td align=center class='plum_fieldbig '><b>T10<br>05:00-06:00</b></td><td align=center class='plum_fieldbig '><b>T11<br>06:00-07:00</b></td><td align=center class='plum_fieldbig '><b>T12<br>07:00-08:00</b></td><td align=center class='plum_fieldbig '><b>T13<br>08:00-09:00</b></td></tr><tr><td align='center'><b>Mon</b></td><td align=center  class='plum_fieldbig'>
+					</td><td align=center  class='plum_fieldbig'>
+					</td><td align=center  class='plum_fieldbig'>CS - FCMT0101<br>NAVEEN GUPTA<br>Sem:1-Sec:2
+					</td><td align=center  class='plum_fieldbig'>CS - FCEC0106<br>NEHA SHARMA<br>Sem:1-Sec:1
+					</td><td align=center  class='plum_fieldbig'>CS - FCMT0101<br>NEERAJ KUMAR<br>Sem:1-Sec:1
+					</td><td align=center  class='plum_fieldbig'>CS - FCCS0102<br>SHIKHA<br>Sem:1-Sec:1
+					</td><td align=center  class='plum_fieldbig'>CS - FCPH0114<br>JITENDRA SINGH<br>Sem:1-Sec:2
+					</td><td align=center  class='plum_fieldbig'>CS - FCCS0102<br>SHILPA DINESH VISPUTE<br>Sem:1-Sec:2
+					</td><td align=center  class='plum_fieldbig'>
+					</td><td align=center  class='plum_fieldbig'>
+					</td><td align=center  class='plum_fieldbig'>
+					</td><td align=center  class='plum_fieldbig'>
+					</td><td align=center  class='plum_fieldbig'>
+					</td></tr></tr><tr><td align='center'><b>Tue</b></td><td align=center  class='plum_fieldbig'>
+					</td><td align=center  class='plum_fieldbig'>
+					</td><td align=center  class='plum_fieldbig'>CS - FCCS0102<br>SHILPA DINESH VISPUTE<br>Sem:1-Sec:2
+					</td><td align=center  class='plum_fieldbig'>CS - FCPH0114<br>JITENDRA SINGH<br>Sem:1-Sec:2
+					</td><td align=center  class='plum_fieldbig'>CS - FCPH0114<br>AMIT SANGER<br>Sem:1-Sec:1
+					</td><td align=center  class='plum_fieldbig'>CS - FCEE0106<br>PRIYA BISHT<br>Sem:1-Sec:1<hr>CS - FCEE0106<br>DIVYANK SRIVASTAVA <br>Sem:1-Sec:1
+					</td><td align=center  class='plum_fieldbig'>
+					</td><td align=center  class='plum_fieldbig'>CS - FCEE0106<br>VINEET KUMAR<br>Sem:1-Sec:2
+					</td><td align=center  class='plum_fieldbig'>CS - FCEC0106<br>SHIV KUMAR<br>Sem:1-Sec:2
+					</td><td align=center  class='plum_fieldbig'>
+					</td><td align=center  class='plum_fieldbig'>
+					</td><td align=center  class='plum_fieldbig'>
+					</td><td align=center  class='plum_fieldbig'>
+					</td></tr></tr><tr><td align='center'><b>Wed</b></td><td align=center  class='plum_fieldbig'>
+					</td><td align=center  class='plum_fieldbig'>
+					</td><td align=center  class='plum_fieldbig'>CS - FCCS0102<br>SHIKHA<br>Sem:1-Sec:1
+					</td><td align=center  class='plum_fieldbig'>CS - FCMT0101<br>NEERAJ KUMAR<br>Sem:1-Sec:1
+					</td><td align=center  class='plum_fieldbig'>CS - FCEC0106<br>NEHA SHARMA<br>Sem:1-Sec:1
+					</td><td align=center  class='plum_fieldbig'>CS - FCMT0101<br>NAVEEN GUPTA<br>Sem:1-Sec:2
+					</td><td align=center  class='plum_fieldbig'>CS - FCEE0106<br>DIVYANK SRIVASTAVA <br>Sem:1-Sec:1
+					</td><td align=center  class='plum_fieldbig'>CS - FCPH0114<br>AMIT SANGER<br>Sem:1-Sec:1
+					</td><td align=center  class='plum_fieldbig'>CS - FCMT0101<br>NAVEEN GUPTA<br>Sem:1-Sec:2
+					</td><td align=center  class='plum_fieldbig'>CS - FCMT0101<br>NAVEEN GUPTA<br>Sem:1-Sec:2
+					</td><td align=center  class='plum_fieldbig'>
+					</td><td align=center  class='plum_fieldbig'>
+					</td><td align=center  class='plum_fieldbig'>
+					</td></tr></tr><tr><td align='center'><b>Thu</b></td><td align=center  class='plum_fieldbig'>
+					</td><td align=center  class='plum_fieldbig'>
+					</td><td align=center  class='plum_fieldbig'>CS - FCEE0106<br>VINEET KUMAR<br>Sem:1-Sec:2
+					</td><td align=center  class='plum_fieldbig'>CS - FCEC0106<br>SHIV KUMAR<br>Sem:1-Sec:2
+					</td><td align=center  class='plum_fieldbig'>CS - FCCS0102<br>SHILPA DINESH VISPUTE<br>Sem:1-Sec:2
+					</td><td align=center  class='plum_fieldbig'>CS - FCPH0114<br>JITENDRA SINGH<br>Sem:1-Sec:2
+					</td><td align=center  class='plum_fieldbig'>CS - FCMT0101<br>NEERAJ KUMAR<br>Sem:1-Sec:1
+					</td><td align=center  class='plum_fieldbig'>CS - FCCS0102<br>SHIKHA<br>Sem:1-Sec:1
+					</td><td align=center  class='plum_fieldbig'>
+					</td><td align=center  class='plum_fieldbig'>
+					</td><td align=center  class='plum_fieldbig'>
+					</td><td align=center  class='plum_fieldbig'>
+					</td><td align=center  class='plum_fieldbig'>
+					</td></tr></tr><tr><td align='center'><b>Fri</b></td><td align=center  class='plum_fieldbig'>
+					</td><td align=center  class='plum_fieldbig'>
+					</td><td align=center  class='plum_fieldbig'>CS - FCEC0106<br>SHIV KUMAR<br>Sem:1-Sec:2
+					</td><td align=center  class='plum_fieldbig'>CS - FCEE0106<br>VINEET KUMAR<br>Sem:1-Sec:2
+					</td><td align=center  class='plum_fieldbig'>CS - FCEC0106<br>NEHA SHARMA<br>Sem:1-Sec:1
+					</td><td align=center  class='plum_fieldbig'>CS - FCMT0101<br>NAVEEN GUPTA<br>Sem:1-Sec:2
+					</td><td align=center  class='plum_fieldbig'>CS - FCPH0114<br>AMIT SANGER<br>Sem:1-Sec:1
+					</td><td align=center  class='plum_fieldbig'>CS - FCEE0106<br>DIVYANK SRIVASTAVA <br>Sem:1-Sec:1
+					</td><td align=center  class='plum_fieldbig'>CS - FCMT0101<br>NEERAJ KUMAR<br>Sem:1-Sec:1
+					</td><td align=center  class='plum_fieldbig'>CS - FCMT0101<br>NEERAJ KUMAR<br>Sem:1-Sec:1
+					</td><td align=center  class='plum_fieldbig'>
+					</td><td align=center  class='plum_fieldbig'>
+					</td><td align=center  class='plum_fieldbig'>
+					</td></tr></tr><tr><td align='center'><b>Sat</b></td><td align=center  class='plum_fieldbig'>
+					</td><td align=center  class='plum_fieldbig'>
+					</td><td align=center  class='plum_fieldbig'>
+					</td><td align=center  class='plum_fieldbig'>
+					</td><td align=center  class='plum_fieldbig'>
+					</td><td align=center  class='plum_fieldbig'>
+					</td><td align=center  class='plum_fieldbig'>
+					</td><td align=center  class='plum_fieldbig'>
+					</td><td align=center  class='plum_fieldbig'>
+					</td><td align=center  class='plum_fieldbig'>
+					</td><td align=center  class='plum_fieldbig'>
+					</td><td align=center  class='plum_fieldbig'>
+					</td><td align=center  class='plum_fieldbig'>
+					</td></tr></tbody></table><br><br><p style='margin-left:15px;'>CS - COMPUTER SCIENCE AND ENGINEERING<p style='margin-left:15px;'> - COMPUTER SCIENCE AND ENGINEERING,COMPUTER SCIENCE AND ENGINEERING<p style='margin-left:15px;'>FCMT0101 - Mathematics-I<p style='margin-left:15px;'>FCEC0106 - Basics of Electronics & Communication Engineering<p style='margin-left:15px;'>FCCS0102 - Computer Programming<p style='margin-left:15px;'>FCPH0114 - Quantum Physics<p style='margin-left:15px;'>FCEE0106 - Fundamentals of Electrical Engineering,FCEE0106 - Fundamentals of Electrical Engineering<p style='margin-left:15px;'>FCEE0106 - Fundamentals of Electrical Engineering</body></html>

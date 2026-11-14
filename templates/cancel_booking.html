@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cancel Booking</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+    <h1>Cancel a Booking</h1>
+
+    {% with messages = get_flashed_messages() %}
+        {% for message in messages %}
+            <p>{{ message }}</p>
+        {% endfor %}
+    {% endwith %}
+
+    {% if bookings %}
+
+        {% for booking in bookings %}
+
+            <div>
+                <p>Room: {{ booking[0] }}</p>
+                <p>Date: {{ booking[1] }}</p>
+                <p>Slot: {{ booking[2] }}</p>
+                <p>Purpose: {{ booking[3] }}</p>
+                <p>Booked by: {{ booking[4] }}</p>
+
+                <form action="/cancel-booking-action" method="POST">
+                    <input type="hidden" name="room"
+                           value="{{ booking[0] }}">
+
+                    <input type="hidden" name="date"
+                           value="{{ booking[1] }}">
+
+                    <input type="hidden" name="slot"
+                           value="{{ booking[2] }}">
+
+                    <button type="submit">Cancel Booking</button>
+                </form>
+
+                <hr>
+            </div>
+
+        {% endfor %}
+
+    {% else %}
+
+        <p>There are no confirmed bookings.</p>
+
+    {% endif %}
+
+    
+
+    <a href="/">Back to Home</a>
+
+</body>
+</html>

@@ -1,0 +1,83 @@
+CREATE DATABASE college_timetable;
+USE college_timetable;
+
+CREATE TABLE timetable (
+    room VARCHAR(10),
+    academic_year VARCHAR(10),
+    day VARCHAR(10),
+    slot VARCHAR(20),
+    class_info TEXT
+);
+
+CREATE TABLE class_cancellations (
+    room VARCHAR(10),
+    date DATE,
+    slot VARCHAR(20),
+    class_info TEXT,
+    PRIMARY KEY (room, date, slot)
+);
+
+CREATE TABLE bookings (
+    room VARCHAR(10),
+    date DATE,
+    slot VARCHAR(20),
+    purpose TEXT,
+    booked_by VARCHAR(100),
+    booker_contactno VARCHAR(20),
+    PRIMARY KEY (room, date, slot)
+);
+
+ALTER TABLE college_timetable.bookings
+ADD COLUMN status VARCHAR(20) DEFAULT 'confirmed';
+
+CREATE TABLE weekly_schedule (
+    room VARCHAR(10),
+    date DATE,
+    slot VARCHAR(20),
+    class_info TEXT,
+    status VARCHAR(20),
+    booked_by VARCHAR(100),
+    booker_contactno VARCHAR(20),
+    booking_purpose TEXT,
+    PRIMARY KEY (room, date, slot)
+);
+
+SHOW TABLES FROM college_timetable;
+DESCRIBE college_timetable.class_cancellations;
+DESCRIBE college_timetable.bookings;
+DESCRIBE college_timetable.timetable;
+DESCRIBE college_timetable.weekly_schedule;
+
+ALTER TABLE college_timetable.timetable
+ADD PRIMARY KEY (room, day, slot);
+
+ALTER TABLE college_timetable.bookings
+DROP PRIMARY KEY,
+ADD COLUMN booking_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY FIRST;
+
+ALTER TABLE college_timetable.class_cancellations
+DROP PRIMARY KEY,
+ADD COLUMN cancellation_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY FIRST;
+
+ALTER TABLE college_timetable.class_cancellations
+ADD COLUMN status VARCHAR(20) DEFAULT 'cancelled';
+
+-after inserting the records- 
+
+SELECT COUNT(*) 
+FROM college_timetable.timetable;
+
+SELECT room, COUNT(*) AS total_slots
+FROM college_timetable.timetable
+GROUP BY room
+ORDER BY room;
+
+SELECT *
+FROM college_timetable.timetable
+ORDER BY
+    room,
+    FIELD(day, 'Mon', 'Tue', 'Wed', 'Thu', 'Fri'),
+    CAST(SUBSTRING(slot, 2) AS UNSIGNED)
+LIMIT 10;
+
+

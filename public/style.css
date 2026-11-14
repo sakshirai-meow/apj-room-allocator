@@ -1,0 +1,133 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 24px;
+    font-family: Arial, sans-serif;
+    background: #f4f6f9;
+    color: #263238;
+    line-height: 1.5;
+}
+
+h1, h2 {
+    color: #183b56;
+}
+
+h1 {
+    margin-top: 0;
+}
+
+/* Let page content use the available width */
+body > h1,
+body > p,
+body > h2,
+body > form,
+body > table,
+body > div,
+body > ul,
+body > a {
+    max-width: 100%;
+}
+
+form, table, body > div {
+    width: 100%;
+    background: #ffffff;
+    padding: 20px;
+    border: 1px solid #dce3e8;
+    border-radius: 8px;
+    margin: 18px 0;
+}
+
+label {
+    display: inline-block;
+    margin: 8px 0;
+    font-weight: bold;
+}
+
+input, select {
+    max-width: 100%;
+    padding: 10px;
+    margin: 5px 0 12px;
+    border: 1px solid #bdc8d1;
+    border-radius: 5px;
+    font: inherit;
+    background: #ffffff;
+}
+
+button {
+    padding: 10px 16px;
+    margin: 6px 4px 6px 0;
+    border: 0;
+    border-radius: 5px;
+    background: #23658a;
+    color: #ffffff;
+    font: inherit;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #174b69;
+}
+
+a {
+    color: #17658a;
+}
+
+a button {
+    margin: 8px 6px 8px 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: auto;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #dce3e8;
+    text-align: left;
+    vertical-align: top;
+}
+
+th {
+    background: #eaf1f5;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #dce3e8;
+    margin: 18px 0;
+}
+
+ul {
+    padding-left: 24px;
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 20px 12px;
+    }
+
+    form {
+        padding: 14px;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    button {
+        max-width: 100%;
+    }
+}
+
+body:has(h1:first-child) {
+    text-align: center;
+}

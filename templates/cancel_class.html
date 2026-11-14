@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cancel Class</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+    <h1>Cancel a Class</h1>
+
+    {% with messages = get_flashed_messages() %}
+        {% for message in messages %}
+            <p>{{ message }}</p>
+        {% endfor %}
+    {% endwith %}
+
+    <form action="/cancel-class" method="GET">
+
+        <label>Room:</label>
+        <select name="room" required>
+            {% for i in range(1, 11) %}
+                {% set room_option = "APJ-%02d"|format(i) %}
+                <option value="{{ room_option }}"
+                    {% if room == room_option %}selected{% endif %}>
+                    {{ room_option }}
+                </option>
+            {% endfor %}
+        </select>
+
+        <br><br>
+
+        <label>Date:</label>
+        <input type="date" name="date" min="{{ min_date }}" max="{{ max_date }}" value="{{ selected_date or '' }}" required>
+
+        <br><br>
+
+        <button type="submit">View Classes</button>
+
+    </form>
+
+    {% if room and selected_date %}
+
+        <h2>Classes in {{ room }} on {{ selected_date }}</h2>
+
+        {% if classes %}
+            {% for class in classes %}
+                <div>
+                    <p>Slot: {{ class[0] }}</p>
+                    <p>Class: {{ class[1] }}</p>
+
+                    <form action="/cancel-class-action" method="POST">
+                        <input type="hidden" name="room" value="{{ room }}">
+                        <input type="hidden" name="date" value="{{ selected_date }}">
+                        <input type="hidden" name="slot" value="{{ class[0] }}">
+
+                        <button type="submit">Cancel Class</button>
+                    </form>
+
+                    <hr>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>No scheduled classes found for this room and date.</p>
+        {% endif %}
+
+    {% endif %}
+
+    <a href="/">Back to Home</a>
+
+</body>
+</html>
